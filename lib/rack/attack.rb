@@ -58,7 +58,6 @@ module Rack::Attack
         blacklisted_response[env]
       elsif throttled?(req)
         throttled_response[env]
-        @app.call(env)
       else
         tracked?(req)
         @app.call(env)
